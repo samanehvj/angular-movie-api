@@ -1,0 +1,39 @@
+<input id="search"
+(blur)="changeBorder($event, 'red')"
+(keyup)="onKeyUp($event, '')" 
+(keydown)="onKeyDown($event)" 
+(keypress)="onKeyPress($event)"
+placeholder="Search for a movie..."/>
+
+<button (click)="searchMovie()">Submit</button>
+
+<div id="results">
+  <ng-container *ngIf="movies">
+    <div *ngFor="let movie of movies">
+      <button [routerLink]="['/show_detail', movie.imdbID]">{{ movie.Title }} </button>
+    </div>
+  </ng-container>
+</div>
+
+<!--<ng-container *ngIf="todos">
+    <div *ngFor="let todo of todos">
+      {{ todo.content }}
+    </div>
+</ng-container>
+  
+<ul>
+    <div *ngFor="let todo of todos">
+      <li *ngIf="todo.content !== 'sleep'">
+        {{ todo.content }}
+      </li>
+    </div>
+  </ul>
+  
+  <ul>
+    <ng-container *ngFor="let todo of todos">
+      <li *ngIf="todo.content !== 'sleep'">
+        {{ todo.content }}
+      </li>
+    </ng-container>
+  </ul> -->
+  
