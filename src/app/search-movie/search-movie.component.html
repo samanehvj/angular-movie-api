@@ -1,39 +1,32 @@
-<input id="search"
-(blur)="changeBorder($event, 'red')"
-(keyup)="onKeyUp($event, '')" 
-(keydown)="onKeyDown($event)" 
+<input style=" width: 30%;
+ height: 30px;"
+ id="search"
+(blur)="changeBorder($event, 'green')"
+(keyup)="onKeyUp($event, '')"
+(keydown)="onKeyDown($event)"
 (keypress)="onKeyPress($event)"
+style="font-size: 20px;
+margin-left: 500px;"
 placeholder="Search for a movie..."/>
 
-<button (click)="searchMovie()">Submit</button>
+<button
+style="background-color: indianred;
+ width: 100px;
+ height: 30px;
+ font-weight: 500;
+ font-size: 20px;
+ margin-top: 30px;"
+ (click)="searchMovie()">Search</button>
 
 <div id="results">
   <ng-container *ngIf="movies">
     <div *ngFor="let movie of movies">
-      <button [routerLink]="['/show_detail', movie.imdbID]">{{ movie.Title }} </button>
+      <button style="background-color:indianred;
+      color: white;
+      height: 30px;"
+      [routerLink]="['/show_detail', movie.imdbID]">{{ movie.Title }} </button>
+
     </div>
   </ng-container>
 </div>
 
-<!--<ng-container *ngIf="todos">
-    <div *ngFor="let todo of todos">
-      {{ todo.content }}
-    </div>
-</ng-container>
-  
-<ul>
-    <div *ngFor="let todo of todos">
-      <li *ngIf="todo.content !== 'sleep'">
-        {{ todo.content }}
-      </li>
-    </div>
-  </ul>
-  
-  <ul>
-    <ng-container *ngFor="let todo of todos">
-      <li *ngIf="todo.content !== 'sleep'">
-        {{ todo.content }}
-      </li>
-    </ng-container>
-  </ul> -->
-  

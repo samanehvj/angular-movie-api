@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
   providedIn: 'root'
 })
 export class MovieService {
-  readonly apikey = 'bfdaf441';
+  readonly apikey = 'f8dbbb3d';
   readonly api = `https://www.omdbapi.com/?apikey=${this.apikey}&type=movie&r=json`;
 
   constructor(private http:HttpClient) {}
